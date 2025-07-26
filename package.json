@@ -3,18 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "postinstall": "chmod +x node_modules/.bin/vite",
+     "vercel-build": "npx vite build",
   "dev": "vite",
   "build": "vite build",
   "preview": "vite preview",
   "test": "echo \"Error: no test specified\" && exit 1"
 },
-
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
