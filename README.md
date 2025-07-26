@@ -26,7 +26,7 @@ Clone the repository:
 bash
 Copy
 Edit
-git clone https://github.com/your-username/shopify-orders-dashboard.git
+git clone https://github.com/Akansha1409/shopify-orders-dashboard.git
 cd shopify-orders-dashboard
 Install dependencies:
 
