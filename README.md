@@ -1,7 +1,34 @@
-📦 Shopify Orders Dashboard
-A sleek and intuitive dashboard to view, search, filter, and paginate through Shopify order data — built with React and Tailwind CSS. Easily monitor order statuses and enhance operational visibility, with support for dark mode for a comfortable viewing experience.
+🛍️ Shopify Orders Dashboard App
+A public Shopify app that displays the last 60 days of orders in a dashboard with full order details including items and images.
 
-🔥 Features
+🚀 Features
+✅ Public Shopify App
+Handles app installation and authentication using Shopify OAuth 2.0 flow.
+
+Implements @shopify/shopify-api library with required scopes.
+
+Uses Shopify GraphQL Admin API to fetch the last 60 days' orders.
+
+🧑‍💼 Merchant Dashboard
+Displays all fetched orders from the database.
+
+View full order details including:
+
+Order ID
+
+Status
+
+CreatedAt
+
+Line Items
+
+Quantity
+
+Reason for return
+
+Image Previews (if available)
+
+🔥 UI Features
 🔍 Search orders by Order ID or Shop name
 
 🎯 Filter orders by Fulfilled, Unfulfilled, or Cancelled status
@@ -14,52 +41,84 @@ A sleek and intuitive dashboard to view, search, filter, and paginate through Sh
 
 🔗 Clean code and component-based architecture
 
-🚀 Getting Started
-Prerequisites
-Node.js (v18 or above recommended)
+🌐 API Endpoints
+GET /orders — Fetch all orders from the database with associated items and images.
 
-npm or yarn
+🧩 Database Schema
+orders — (id, shop, orderId, status, createdAt)
 
-Installation
-Clone the repository:
+fulfilment_items — (returnId, lineItemId, qty, reason, imageURL)
+
+images — (imageURL, returnItemId)
+
+🧪 Tech Stack
+Frontend: Tailwind CSS
+
+Backend: Node.js, Express.js
+
+Database: PostgreSQL
+
+API Integration: Shopify Admin GraphQL API
+
+Authentication: OAuth-based public app installation
+
+Database Management: pg (Node PostgreSQL client)
+
+⚙️ Setup Instructions
+Clone the repo
 
 bash
 Copy
 Edit
 git clone https://github.com/Akansha1409/shopify-orders-dashboard.git
 cd shopify-orders-dashboard
-Install dependencies:
+Install dependencies
 
 bash
 Copy
 Edit
 npm install
-# or
-yarn install
-Start the development server:
+Configure environment variables
+
+Create a .env file using .env.example as a reference:
+
+ini
+Copy
+Edit
+SHOPIFY_API_KEY=your_key
+SHOPIFY_API_SECRET=your_secret
+SCOPES=read_orders
+HOST=https://your-app-url.com
+POSTGRES_URL=your_postgres_connection_url
+Run the app
 
 bash
 Copy
 Edit
-npm run dev
-# or
-yarn dev
-Ensure your backend server is running and accessible at http://localhost:5000/orders.
+node index.js
 
-🌐 Deployment
-To deploy the frontend on Vercel:
+📬 Submission Info
+GitHub Repo: https://github.com/Akansha1409/shopify-orders-dashboard
 
-Push your code to a GitHub repository.
+🌍 Deployment
+This app can be deployed to any Node.js-compatible platform such as:
 
-Go to Vercel.com and import the project from GitHub.
+Render
 
-Choose npm run build as the build command and dist as the output directory (if using Vite).
+Railway
 
-Click deploy.
+Heroku
 
-To deploy the backend, you can use:
+Vercel (with backend functions)
 
-Render, Railway, or Cylic for free Node.js hosting.
+Fly.io
 
-Update the frontend URL to the deployed backend’s endpoint.
+To deploy:
 
+Add your environment variables to the deployment platform.
+
+Connect your GitHub repo.
+
+Make sure PostgreSQL is hosted (e.g., on Supabase, Neon, or Railway).
+
+Add your Shopify App's App URL and Redirect URLs in the Shopify Partner Dashboard, matching the deployed URLs.
