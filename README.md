@@ -82,7 +82,6 @@ Configure environment variables
 
 Create a .env file using .env.example as a reference:
 
-ini
 Copy
 Edit
 SHOPIFY_API_KEY=your_key
